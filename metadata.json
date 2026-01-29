@@ -1,0 +1,7 @@
+{
+  "name": "Artify: Pencil & ASCII Studio",
+  "description": "Transform your photos into professional pencil sketches and stunning ASCII art using Gemini AI and advanced canvas processing.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
