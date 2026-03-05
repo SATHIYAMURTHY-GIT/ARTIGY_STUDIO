@@ -1,11 +1,16 @@
-
 import { GoogleGenAI } from "@google/genai";
+
+const env = (import.meta as ImportMeta & {
+  env: {
+    VITE_GEMINI_API_KEY?: string;
+  };
+}).env;
 
 export class GeminiArtService {
   private ai: GoogleGenAI;
 
   constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+    this.ai = new GoogleGenAI({ apiKey: env.VITE_GEMINI_API_KEY || '' });
   }
 
   async transformToPencilSketch(base64Data: string, mimeType: string): Promise<string> {
