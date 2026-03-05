@@ -2,19 +2,27 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Artify Studio
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1YkmPKzwxlTDosKiJzYJhqb6CQ7dBfGui
+Transform your photos into professional pencil sketches and ASCII art using Gemini AI.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js 18+
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. Create `.env.local` and add your Gemini API key:
+   `VITE_GEMINI_API_KEY=your_api_key_here`
 3. Run the app:
    `npm run dev`
+
+## Build for Hosting
+
+1. Build production assets:
+   `npm run build`
+2. Deploy the generated `dist/` folder on your hosting platform.
+3. In your hosting platform environment variables, set:
+   `VITE_GEMINI_API_KEY=your_api_key_here`
+
+This project uses standard Vite environment variables (`VITE_*`) so it works across common hosts like Vercel, Netlify, Cloudflare Pages, Render static sites, and any static hosting with a build step.
